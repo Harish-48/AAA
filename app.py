@@ -2,7 +2,7 @@ import requests
 from flask import Flask, Response, request
 
 app = Flask(__name__)
-DESTINATION = "https://harish-python-notes.vercel.app"
+DESTINATION = os.environ.get("MAIN_URL")
 
 @app.route('/<path:subpath>', methods=["GET", "POST"])
 @app.route('/', methods=["GET", "POST"])
